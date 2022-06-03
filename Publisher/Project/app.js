@@ -22,6 +22,7 @@ exec("hostname -I",(error, stdout, stderr) => {
 });
 
 const protocol = 'mqtt'
+//const complete_host_URI = protocol.concat('://localhost:', port)
 const complete_host_URI = protocol.concat('://',broker, ':', port)
 
 console.log("soy IP")
