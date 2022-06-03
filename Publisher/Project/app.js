@@ -2,7 +2,7 @@ var mqtt = require('mqtt');
 const dayjs = require('dayjs')
 const { exec } = require("child_process");
 
-var broker = process.env.NOMBREBROK;
+//var broker = process.env.NOMBREBROK;
 var port = process.env.PORT;
 var topic = process.env.TOPIC;
 var containerName = process.env.HOSTNAME;
@@ -22,7 +22,8 @@ exec("hostname -I",(error, stdout, stderr) => {
 });
 
 const protocol = 'mqtt'
-const complete_host_URI = protocol.concat('://',broker, ':', port)
+const complete_host_URI = protocol.concat('://localhost:', port)
+//const complete_host_URI = protocol.concat('://',broker, ':', port)
 
 console.log("soy IP")
 console.log(ip)
