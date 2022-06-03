@@ -2,35 +2,40 @@ version: "3.0"
 services:
   pub1: 
     build: .
+    image: sub-im
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
       PORT: 21242
   pub2:
-    build: .
+    image: sub-im
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
       PORT: 21242
+    depends_on:
+      - pub1
   pub3:
-    build: .
+    image: sub-im
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
       PORT: 21242
+    depends_on:
+      - pub1
   pub4:
-    build: .
+    image: sub-im
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
       PORT: 21242
+    depends_on:
+      - pub1
   pub5:
-    build: .
+    image: sub-im
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
       PORT: 21242
-networks:
-  ds-net:
-    name: ds-net
-    driver: bridge
+    depends_on:
+      - pub1
