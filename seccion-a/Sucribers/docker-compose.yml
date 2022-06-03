@@ -5,31 +5,31 @@ services:
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
-      PORT: 21222
+      PORT: 21242
   pub2:
     build: .
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
-      PORT: 21222
+      PORT: 21242
   pub3:
     build: .
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
-      PORT: 21222
+      PORT: 21242
   pub4:
     build: .
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
-      PORT: 21222
+      PORT: 21242
   pub5:
     build: .
     environment:
       HOST: research.upb.edu
       TOPIC: node/ds
-      PORT: 21222
+      PORT: 21242
 networks:
   ds-net:
     name: ds-net
