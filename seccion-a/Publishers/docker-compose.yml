@@ -10,7 +10,7 @@ services:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
   pub1: 
     build: .
-    image: pubIm
+    image: pub-im
     environment:
       PORT: 1883
       TOPIC: node/ds
@@ -20,7 +20,7 @@ services:
     depends_on:
       - broker
   pub2: 
-    image: pubIm
+    image: pub-im
     environment:
       PORT: 1883
       TOPIC: node/ds
@@ -29,8 +29,9 @@ services:
       - ds-net
     depends_on:
       - broker
+      - pub1
   pub3:
-    image: pubIm
+    image: pub-im
     environment:
       PORT: 1883
       TOPIC: node/ds
@@ -39,8 +40,9 @@ services:
       - ds-net
     depends_on:
       - broker
+      - pub1
   pub4:
-    image: pubIm
+    image: pub-im
     environment:
       PORT: 1883
       TOPIC: node/ds
@@ -49,8 +51,9 @@ services:
       - ds-net
     depends_on:
       - broker
+      - pub1
   pub5: 
-    image: pubIm
+    image: pub-im
     environment:
       PORT: 1883
       TOPIC: node/ds
@@ -59,6 +62,7 @@ services:
       - ds-net
     depends_on:
       - broker
+      - pub1
 networks:
   ds-net:
     name: ds-net
