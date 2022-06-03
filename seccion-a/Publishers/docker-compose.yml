@@ -1,0 +1,60 @@
+version: "3.0"
+services:
+  broker: 
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883 
+    networks:
+      - ds-net
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+  pub1: 
+    build: .
+    environment:
+      PORT: 1883
+      TOPIC: node/ds
+      NOMBREBROK: broker
+    networks:
+      - ds-net
+    depends_on:
+      - broker
+  pub2: 
+    build: .
+    environment:
+      PORT: 1883
+      TOPIC: node/ds
+      NOMBREBROK: broker
+    networks:
+      - ds-net
+    depends_on:
+      - broker
+  pub3:
+    build: .
+    environment:
+      PORT: 1883
+      TOPIC: node/ds
+      NOMBREBROK: broker
+    networks:
+      - ds-net
+    depends_on:
+      - broker
+  pub4: 
+    build: .
+    environment:
+      PORT: 1883
+      TOPIC: node/ds
+      NOMBREBROK: broker
+    networks:
+      - ds-net
+    depends_on:
+      - broker
+  pub5: 
+    build: .
+    environment:
+      PORT: 1883
+      TOPIC: node/ds
+      NOMBREBROK: broker
+    networks:
+      - ds-net
+    depends_on:
+      - broker
