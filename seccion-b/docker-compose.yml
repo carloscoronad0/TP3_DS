@@ -8,8 +8,8 @@ services:
       - 1883:1883
     volumes:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
-    networks:
-      - dsnet
+    #networks:
+      #- dsnet
     # Deployment configuration -----------
     deploy:
       replicas: 1
@@ -22,8 +22,8 @@ services:
   publisher:
     image: nodejs
     # General configuration --------------
-    networks:
-      - dsnet
+    #networks:
+      #- dsnet
     env_file:
       - pub.env
     # Deployment configuration -----------
@@ -48,7 +48,7 @@ services:
       placement:
         constraints:
           - "node.role==worker"
-networks:
-  dsnet:
-    name: ds-net
-    driver: bridge
+#networks:
+#  dsnet:
+#    name: ds-net
+#    driver: bridge
