@@ -58,3 +58,7 @@ services:
       - ds-net
     depends_on:
       - broker
+networks:
+  ds-net:
+    name: ds-net
+    driver: bridge

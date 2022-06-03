@@ -1,0 +1,36 @@
+version: "3.0"
+services:
+  pub1: 
+    build: .
+    environment:
+      HOST: research.upb.edu
+      TOPIC: node/ds
+      PORT: 21222
+  pub2:
+    build: .
+    environment:
+      HOST: research.upb.edu
+      TOPIC: node/ds
+      PORT: 21222
+  pub3:
+    build: .
+    environment:
+      HOST: research.upb.edu
+      TOPIC: node/ds
+      PORT: 21222
+  pub4:
+    build: .
+    environment:
+      HOST: research.upb.edu
+      TOPIC: node/ds
+      PORT: 21222
+  pub5:
+    build: .
+    environment:
+      HOST: research.upb.edu
+      TOPIC: node/ds
+      PORT: 21222
+networks:
+  ds-net:
+    name: ds-net
+    driver: bridge
